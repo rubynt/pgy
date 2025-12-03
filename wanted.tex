@@ -1,0 +1,79 @@
+
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{parskip}
+\usepackage{tikz}
+\usetikzlibrary{tikzmark}
+\usepackage{xcolor}
+\begin{document}
+
+
+\begin{table}
+\centering
+\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c}
+  (mod 11) & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+  \hline 
+  2 & 1 & \tikzmarknode{n21}{2} & 4 & 8 & 5 & 10 & 9 & 7 & 3 & 6 & \tikzmarknode{n22}{1} \\
+  \hline 
+  3 & 1 & \tikzmarknode{n31}{3} & 9 & 5 & 4 & \tikzmarknode{n32}{1} & \tikzmarknode{n33}{3} & 9 & 5 & 4 & \tikzmarknode{n34}{1} \\
+  \hline 
+  4 & 1 & \tikzmarknode{n41}{4} & 5 & 9 & 3 & \tikzmarknode{n42}{1} & \tikzmarknode{n43}{4} & 5 & 9 & 3 & \tikzmarknode{n44}{1} \\
+  \hline 
+  5 & 1 & \tikzmarknode{n51}{5} & 3 & 4 & 9 & \tikzmarknode{n52}{1} & \tikzmarknode{n53}{5} & 3 & 4 & 9 & \tikzmarknode{n54}{1} \\
+  \hline 
+  6 & 1 & \tikzmarknode{n61}{6} & 3 & 7 & 9 & 10 & 5 & 8 & 4 & 2 & \tikzmarknode{n62}{1} \\
+  \hline 
+  7 & 1 & \tikzmarknode{n71}{7} & 5 & 2 & 3 & 10 & 4 & 6 & 9 & 8 & \tikzmarknode{n72}{1} \\
+  \hline 
+  8 & 1 & \tikzmarknode{n81}{8} & 9 & 6 & 4 & 10 & 3 & 2 & 5 & 7 & \tikzmarknode{n82}{1} \\
+  \hline 
+  9 & 1 & \tikzmarknode{n91}{9} & 4 & 3 & 5 & \tikzmarknode{n92}{1} & \tikzmarknode{n93}{9} & 4 & 3 & 5 & \tikzmarknode{n94}{1} \\
+  \hline 
+  10 & 1 & 10 & 1 & 10 & 1 & 10 & 1 & 10 & 1 & 10 & 1 \\
+\end{tabular}
+\end{table}
+
+Primitív gyökök a 2, 6, 7, 8.
+
+\begin{tikzpicture}[remember picture,overlay,
+  highlight/.style={draw=red,rounded corners, thin, 
+                    minimum width=1em,minimum height=2.5ex},
+  note/.style={font=\small,red,text width=3cm},
+  ]
+  \draw[highlight] ([yshift=1.7ex,xshift=-0.8em]pic cs:n21) 
+                   rectangle ([yshift=-0.4ex,xshift=0.8em]pic cs:n22) ;
+  \draw[highlight] ([yshift=1.8ex,xshift=-0.8em]pic cs:n31) 
+                   rectangle ([yshift=-0.4ex,xshift=0.8em]pic cs:n32) ;
+  \draw[highlight] ([yshift=1.8ex,xshift=-0.8em]pic cs:n33) 
+                   rectangle ([yshift=-0.4ex,xshift=0.8em]pic cs:n34) ;
+  \draw[highlight] ([yshift=1.8ex,xshift=-0.8em]pic cs:n41) 
+                   rectangle ([yshift=-0.4ex,xshift=0.8em]pic cs:n42) ;
+  \draw[highlight] ([yshift=1.8ex,xshift=-0.8em]pic cs:n43) 
+                   rectangle ([yshift=-0.4ex,xshift=0.8em]pic cs:n44) ;
+  \draw[highlight] ([yshift=1.8ex,xshift=-0.8em]pic cs:n51) 
+                   rectangle ([yshift=-0.4ex,xshift=0.8em]pic cs:n52) ;
+  \draw[highlight] ([yshift=1.8ex,xshift=-0.8em]pic cs:n53) 
+                   rectangle ([yshift=-0.4ex,xshift=0.8em]pic cs:n54) ;
+  \draw[highlight] ([yshift=1.8ex,xshift=-0.8em]pic cs:n61) 
+                   rectangle ([yshift=-0.4ex,xshift=0.8em]pic cs:n62) ;
+  \draw[highlight] ([yshift=1.8ex,xshift=-0.8em]pic cs:n71) 
+                   rectangle ([yshift=-0.4ex,xshift=0.8em]pic cs:n72) ;
+  \draw[highlight] ([yshift=1.8ex,xshift=-0.8em]pic cs:n81) 
+                   rectangle ([yshift=-0.4ex,xshift=0.8em]pic cs:n82) ;
+                   
+  \draw[highlight] ([yshift=1.8ex,xshift=-0.8em]pic cs:n91) 
+                   rectangle ([yshift=-0.4ex,xshift=0.8em]pic cs:n92) ;
+  \draw[highlight] ([yshift=1.8ex,xshift=-0.8em]pic cs:n93) 
+                   rectangle ([yshift=-0.4ex,xshift=0.8em]pic cs:n94) ;
+\end{tikzpicture}
+
+
+\noindent
+$\begin{pmatrix}
+a & b & c & d & e\\
+c & a & e & b & d
+\end{pmatrix}$ = $\left( a c e d b \right)$
+\\
+sg(f) = $(-1)^{1}$ = -1
+
+\end{document}
