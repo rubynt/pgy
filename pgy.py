@@ -3,7 +3,7 @@ import numpy as np
 from comp import *
 
 
-mod = 14
+mod = 17
 def compile_latex(p: str):
     cwd = os.getcwd()
     subprocess.Popen(f"pdflatex {cwd}/{p}".split(' '), start_new_session=True).wait()
@@ -16,6 +16,7 @@ fn = 'test.tex'
 fd = open(fn, 'w')
 fd.write(r'''
 \documentclass{article}
+\usepackage[a4paper, total={6.4in, 10in}]{geometry}
 \usepackage{amsmath}
 \usepackage{parskip}
 \usepackage{tikz}
